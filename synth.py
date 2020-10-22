@@ -1,10 +1,16 @@
 from synthesizer import Waveform, Synthesizer, Player
 from tkinter import *
 
+def callback(event):
+    print ("hello!")
+
 root = Tk()
 
-a1 = Button (root, text="A").grid(row=1, column=1)
-a1_sh = Button (root, text="A#").grid(row=1, column=2)
+a1 = Button (root, text="A")
+a1.bind("<Button-1>", callback)
+a1.grid(column=1, row=1)
+
+a1_sh = Button (root, text="A#", bg="black").grid(row=1, column=2)
 b1 = Button (root, text="B").grid(row=1, column=3)
 b1_sh = Button (root, text="B#").grid(row=1, column=4)
 c1 = Button (root, text="C").grid(row=1, column=5)
